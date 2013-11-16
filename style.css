@@ -1,0 +1,123 @@
+@charset "UTF-8";
+body { 
+margin:0;
+ padding:0; 
+ width:100%;
+ background-image:url(images/bg.png) ;
+ font-family: Microsoft YaHei; 
+ }
+ 
+* {
+ padding:0; 
+ margin:0;
+ }
+ #main{
+ width:970px;
+ margin:0 auto;
+ }
+ #header{
+ margin:0 auto;
+ padding:0; 
+ width:970px;
+ }
+ 
+#logo{ 
+width:auto;
+margin:0; 
+padding:24px 40px; 
+color:#fff;  
+font-family:Arial, Helvetica, sans-serif;
+font-size: 25px; 
+letter-spacing:-3px;
+ }
+ 
+ #menu{
+ margin:0 auto 0px; 
+ padding:0 30px;
+ height:35px; 
+ background-image:url(images/menu.png) ;
+ border-radius: 10px 10px 0px 0px;
+ }
+ 
+#menu ul { 
+list-style:none; 
+padding:0; 
+height:35px; 
+float:left; 
+border-left:1px solid #c3c3c3;
+}
+
+#menu ul li {
+ margin:0; 
+ padding:0; 
+ float:left;
+ border-right:1px solid #c3c3c3;
+ }
+ 
+#menu ul li a {
+ display:block;
+ margin:0; 
+ padding:5px 24px; 
+ color:#000; 
+ text-decoration:none; 
+ line-height: 25px;
+ font-size:13px;
+ }
+ 
+#current{
+color:#000; 
+background-color:#fff;
+}
+#menu ul li a:hover  { 
+ color:#000; 
+background-color:#fff;
+}
+
+#content1 { 
+ margin:0 auto; 
+ width:970px;
+ background-color:#fff;
+ padding-top:5px;
+ height:100%;
+}
+#maincontent { 
+ margin:5px 10px 0px 10px;
+ border-radius: 10px 10px 10px 10px;
+ padding:20px; 
+ width:910px; 
+ border:1px solid #c3c3c3;
+}
+
+#date input{
+ width:40px;
+} 
+
+#brief{  width:550px;height:200px;border:1px solid #c3c3c3;}
+
+#show table{
+	border:1px solid #c3c3c3;
+	text-align:center;
+
+}
+#show td{
+	border:1px solid #c3c3c3;
+	width:150px;
+	}
+#detail{
+	border:1px solid #c3c3c3;
+	width:300px;
+	height:150px;
+	}
+ 
+h2 { font:normal 15px/1.5em Arial, Helvetica, sans-serif; padding:8px 0; margin:8px 0; color:#595959;}
+
+
+
+
+
+
+
+
+
+
+
