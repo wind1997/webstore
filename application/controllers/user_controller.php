@@ -7,6 +7,7 @@ class User_controller extends CI_Controller {
 		$this->load->model('Brief_model');
 		$this->load->model('Detail_model');
 		$this->load->model('Pic_model');
+		$this->load->model('Car_model');
 		date_default_timezone_set("PRC");
 	}
 	
@@ -14,15 +15,16 @@ class User_controller extends CI_Controller {
     {
 		$data['title'] = '交通违章信息查询';
 		$data['login_user'] = $this->session->userdata('username');
-		$data['carnum'] = $this->session->userdata('carnum');
+		$data['drivingnum'] = $this->session->userdata('drivingnum');
+		//$data['query1'] = $this->Car_model->get_car($data['drivingnum']);
 		$this->load->view('head', $data);
-		$data['query'] = $this->Brief_model->get_brief($data['carnum']);
+		$data['query'] = $this->Brief_model->get_brief($data['drivingnum']);
         $this->load->view('general_view', $data);
         $this->load->view('foot');
     }
 	
 	 function content($id){
-	 $data['title'] = '交通违章信息查询';
+	    $data['title'] = '交通违章信息查询';
 		$data['login_user'] = $this->session->userdata('username');
 		$data['id'] = $id;
 		
@@ -31,5 +33,15 @@ class User_controller extends CI_Controller {
         $this->load->view('detail_view', $data);
         $this->load->view('foot');
 	 }
+	 function pay($id){
+	    $data['flag']= $this->Brief_model->update_brief($id);
+		 if($data['flag'] == 1)
+		     echo "<script>alert('success!');window.location.href='../../user_controller/index'</script>";
+		 else
+		     echo "<script>alert('fail!');window.location.href='../../user_controller/index'</script>";
+		
+		
+		
+	  }
 }
 ?>

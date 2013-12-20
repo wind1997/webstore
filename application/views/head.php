@@ -21,8 +21,10 @@
 	<?php if ($login_user == 'admin'):?>
 	<li id="current"><?=anchor('user_controller', "违章信息")?></li>
 	<li><?=anchor('upload_controller', "违章上传")?></li>
+	<li><?=anchor('standard_controller', "违章处罚标准")?></li>
 	<?php elseif ($login_user):?>
 	<li id="current"><?=anchor('user_controller', "违章信息")?></li>
+	<li><?=anchor('car_controller', "添加车辆")?></li>
 	<?php else:?>
 	<li id="current"><?=anchor(' ', "登录")?></li>
 	<li><?=anchor('register_controller', "注册")?></li>

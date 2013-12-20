@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 class PIC_model extends CI_Model {
 
@@ -11,12 +11,14 @@ class PIC_model extends CI_Model {
             return $query->result();
     }
 
-   function insert_pic($id,$file) {
+   function insert_pic($id) {
          $dest_folder  = "picture/$id/"; 
 	    if(!file_exists($dest_folder)){ 
         mkdir($dest_folder,0777,true); 
           } 
-          
+		  $max = $_POST['number'];
+		  for($i=0;$i<$max;$i++){
+          $file = $_FILES['file'.$i];
 		   $filename = $file["tmp_name"];
 		   $name = $file["name"];
  
@@ -27,8 +29,8 @@ class PIC_model extends CI_Model {
              );
         $this->db->insert('pic', $data);	   
 	  move_uploaded_file($filename, $uploadfile); 
- }
-
+                                  }
+}
    
 }
 

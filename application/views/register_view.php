@@ -45,10 +45,6 @@
 		<td><?=form_input('drivingnum')?></td>
 	</tr>
 	<tr>
-		<td><i><?="车牌号 :"?></i></td>
-		<td><?=form_input('carnum')?></td>
-	</tr>
-	<tr>
 		<td></td>
 		<td><?=form_submit('submit', 'register')?></td>
 	</tr>

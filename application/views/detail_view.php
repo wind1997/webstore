@@ -40,11 +40,13 @@
 		<td><div id="detail"><?=$item->content?></div></td>
 	</tr>
 	<?php endforeach; ?>
-	<?php foreach ($pquery as $pitem): ?>
+	
 	<tr>
 		<td><i><?="现场图片 :"?></i></td>
-		<td><div ><?php echo"<image width='300px' height='200px'src='../../../$pitem->src' alt=''></image>"?></div></td>
+		<td></td>
 	</tr>
-	<?php endforeach; ?>
-</table>
-
+	
+</table><div id="pic">
+<?php foreach ($pquery as $pitem): ?>
+<?php echo"<image width='300px' height='200px'src='../../../$pitem->src' alt=''></image>"?>
+		<?php endforeach; ?></div>

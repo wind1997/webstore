@@ -7,6 +7,7 @@ class Upload_controller extends CI_Controller {
 		$this->load->model('Brief_model');
 		$this->load->model('Detail_model');
 		$this->load->model('Pic_model');
+		$this->load->model('Standard_model');
 	}
 	
     function index()
@@ -21,10 +22,11 @@ class Upload_controller extends CI_Controller {
     {
 		$this->Brief_model->insert_brief();
 		$data['id'] = mysql_insert_id();
-		$data['file'] = $_FILES['file'];
-		$this->Detail_model->insert_detail($data['id']);
-		$this->Pic_model->insert_pic($data['id'],$data['file']);
-		$this->load->view('upcomplete');
+		$data ['query']=$this->Standard_model->gain_standard();
+		$this->Detail_model->insert_detail($data['id'],$data['query']);
+		$this->Pic_model->insert_pic($data['id']);
+		$this->load->view('upcomplete',$data);
+		
 	}
 }
 ?>

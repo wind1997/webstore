@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class User_model extends CI_Model {
 
     var $name = '';
@@ -6,7 +6,7 @@ class User_model extends CI_Model {
     var $password = '';
     var $email = '';
 	var $drivingnum='';
-	var $carnum = '';
+	//var $carnum = '';
  
 
     function __construct()
@@ -21,7 +21,7 @@ class User_model extends CI_Model {
 		$this->truename = $_POST['truename'];
         $this->email = $_POST['email'];
         $this->drivingnum = $_POST['drivingnum'];
-		$this->carnum = $_POST['carnum'];
+		//$this->carnum = $_POST['carnum'];
         
         $this->db->insert('user', $this);
 	}

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 class Detail_model extends CI_Model {
 
@@ -7,21 +7,30 @@ class Detail_model extends CI_Model {
     }
 
     function get_detail($id) {
-            $query = $this->db->query('select * from detail catalogus where  bid =' . $id);
+            $query = $this->db->query('select * from detail where  bid =' . $id);
             return $query->result();
     }
 
-    function insert_detail($id) {
-        $data = array(
+    function insert_detail($id,$query) {
+	
+	   
+		
+	  foreach ($query as $item){
+	  $score = $item->score;
+	  $fine  = $item->fine;
+	 
+	 $data = array(
             'bid'  =>$id,
             'year' =>$_POST['year'],
 			'month'=>$_POST['month'],
 			'day'  =>$_POST['day'],
-			'score'=>$_POST['score'],
-			'fine' =>$_POST['fine'],
+			'score'=>$score,
+			'fine' =>$fine,
 			'content' =>$_POST['content']
         );
         $this->db->insert('detail', $data);
+		}
+		
     }
 
 }

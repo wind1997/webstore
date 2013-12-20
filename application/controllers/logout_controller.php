@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class Logout_controller extends CI_Controller {
 
 	function __construct()
@@ -8,6 +8,7 @@ class Logout_controller extends CI_Controller {
     function index()
     {
 		$this->session->unset_userdata('username');
+		$this->session->unset_userdata('drivingnum');
 		redirect('');
     }
 }

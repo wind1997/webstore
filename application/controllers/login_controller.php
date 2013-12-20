@@ -12,7 +12,8 @@ class Login_controller extends CI_Controller {
 		if ($row)
 		{
 			$this->session->set_userdata('username', $row->name);
-			$this->session->set_userdata('carnum', $row->carnum);
+			$this->session->set_userdata('drivingnum', $row->drivingnum);
+			//echo  $this->session->userdata('carnum');
 			redirect('user_controller');
 		}
 		else
